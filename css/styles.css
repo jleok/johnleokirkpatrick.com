@@ -379,6 +379,77 @@ header.site .wrap{
   color: var(--text-secondary);
 }
 
+/* ---------------- template downloads ---------------- */
+.template-intro{ padding-top: var(--space-5); padding-bottom: var(--space-7); }
+.template-intro h1{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-h1-detail);
+  line-height: 1.15;
+  margin: 0 0 var(--space-4) 0;
+  max-width: 680px;
+}
+.template-intro p{
+  font-size: var(--text-body);
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 62ch;
+}
+
+.template-downloads{ padding-bottom: var(--space-9); }
+.download-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+@media (max-width: 1023px){
+  .download-grid{ grid-template-columns: 1fr; }
+}
+.download-card{
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: var(--space-5);
+  transition: border-color .15s ease;
+}
+.download-card:hover{ border-color: var(--accent); }
+.download-card .meta{
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-3) 0;
+  letter-spacing: 0.02em;
+}
+.download-card .meta .tag{ color: var(--accent); font-weight: 500; }
+.download-card h3{
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--text-h3);
+  line-height: 1.25;
+  margin: 0 0 var(--space-2) 0;
+}
+.download-card p{
+  font-size: var(--text-small);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-5) 0;
+  flex-grow: 1;
+}
+.btn{
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--accent-on-accent);
+  background: var(--accent);
+  border-radius: 4px;
+  padding: var(--space-2) var(--space-4);
+  transition: background .15s ease;
+}
+.btn:hover{ background: var(--accent-strong); }
+
 /* ---------------- footer ---------------- */
 footer.site{
   padding-top: var(--space-7);
