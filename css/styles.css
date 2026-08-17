@@ -432,9 +432,11 @@ header.site .wrap{
   color: var(--text-secondary);
 }
 
-/* ---------------- template downloads ---------------- */
-.template-intro{ padding-top: var(--space-5); padding-bottom: var(--space-7); }
-.template-intro h1{
+/* ---------------- section intro (templates index, blog index) ---------------- */
+.template-intro,
+.blog-intro{ padding-top: var(--space-5); padding-bottom: var(--space-7); }
+.template-intro h1,
+.blog-intro h1{
   font-family: var(--font-display);
   font-weight: 500;
   font-size: var(--text-h1-detail);
@@ -442,11 +444,53 @@ header.site .wrap{
   margin: 0 0 var(--space-4) 0;
   max-width: 680px;
 }
-.template-intro p{
+.template-intro p,
+.blog-intro p{
   font-size: var(--text-body);
   color: var(--text-secondary);
   margin: 0;
   max-width: 62ch;
+}
+
+/* ---------------- article body (blog posts) ----------------
+   Extends .detail-body (project detail pages) with the elements a
+   long-form post needs — sub-headings and lists — that a project
+   write-up never used. Same tokens, same measure, same voice. */
+.detail-body h2{
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-h3);
+  color: var(--text-primary);
+  margin: var(--space-7) 0 var(--space-3) 0;
+}
+.detail-body h2:first-child{ margin-top: 0; }
+.detail-body ol,
+.detail-body ul{
+  font-size: var(--text-body);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-4) 0;
+  padding-left: 1.25em;
+}
+.detail-body li{ margin-bottom: var(--space-2); }
+.detail-body li:last-child{ margin-bottom: 0; }
+.detail-body li > p{ margin: 0; }
+.detail-body strong{ font-weight: 600; }
+
+/* inline figure within the prose column — same frame language as
+   .detail-media, just sized to the 680px measure instead of full width */
+.body-figure{ margin: 0 0 var(--space-5) 0; }
+.body-figure .frame{
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.body-figure img{ display: block; width: 100%; height: auto; }
+.body-figure figcaption{
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  color: var(--text-secondary);
 }
 
 .template-downloads{ padding-bottom: var(--space-9); }
