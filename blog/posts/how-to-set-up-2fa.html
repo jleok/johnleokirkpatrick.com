@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'" />
+<title>How to Set Up 2FA on Any Account (Step-by-Step) — John Kirkpatrick</title>
+<meta name="description" content="A step-by-step guide to turning on two-factor authentication on any online account — takes less than five minutes." />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to Set Up 2FA on Any Account (Step-by-Step) — John Kirkpatrick" />
+<meta property="og:description" content="A step-by-step guide to turning on two-factor authentication on any online account — takes less than five minutes." />
+<meta property="og:image" content="https://www.johnleokirkpatrick.com/blog/assets/how-to-set-up-2fa/password-vs-2fa-flow.png" />
+<meta property="og:url" content="https://www.johnleokirkpatrick.com/blog/posts/how-to-set-up-2fa.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to Set Up 2FA on Any Account (Step-by-Step) — John Kirkpatrick" />
+<meta name="twitter:description" content="A step-by-step guide to turning on two-factor authentication on any online account — takes less than five minutes." />
+<meta name="twitter:image" content="https://www.johnleokirkpatrick.com/blog/assets/how-to-set-up-2fa/password-vs-2fa-flow.png" />
+<link rel="stylesheet" href="../../css/styles.css" />
+</head>
+<body>
+
+  <header class="site">
+    <div class="wrap">
+      <span class="site-name">John Kirkpatrick</span>
+      <nav class="header-links">
+        <a href="../../index.html#work">Work</a>
+        <a href="../">Blog</a>
+        <a href="../../templates/">Templates</a>
+        <a class="contact" href="mailto:inquiries.agave@proton.me">Email</a>
+        <a href="https://github.com/jleok" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="detail-top">
+    <div class="wrap">
+      <a class="back-link" href="../">← Blog</a>
+    </div>
+  </div>
+
+  <section class="detail-header">
+    <div class="wrap">
+      <h1>How to Set Up 2FA on Any Account (Step-by-Step)</h1>
+      <p class="detail-meta"><span class="tag">GUIDE</span> · Plain-English Cybersecurity · Aug 17, 2026</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap detail-layout">
+      <div class="detail-body">
+
+        <p>
+          Protecting yourself online does not have to be complicated, and
+          that is the aim of this series.
+        </p>
+        <p>
+          <strong>TLDR:</strong> 2FA is a sign-in security measure that
+          requires you to prove your identity two different times when you
+          sign in to any online account (e.g., Facebook, Gmail), and it can
+          significantly reduce the chances of a digital catastrophe, so
+          enable it on all of your accounts if you care about security.
+        </p>
+        <p>
+          If someone approached me and asked, "How do I protect myself
+          online?" my gut instinct would be to tell them about enabling
+          two-factor authentication (2FA) on all of their online accounts,
+          full stop.
+        </p>
+        <p>
+          Why? 2FA gives people peace of mind when it comes to their online
+          accounts because it adds another sign-in layer on top of your
+          general sign-in screen and account password. That way, if a bad
+          actor gains access to your sign-in credentials, they will be
+          unable to sign into your account without going through the extra
+          layer that is 2FA. It also takes less than five minutes to
+          configure, which eliminates the time excuse.
+        </p>
+
+        <h2>How does it work?</h2>
+
+        <figure class="body-figure">
+          <div class="frame">
+            <img src="../assets/how-to-set-up-2fa/password-vs-2fa-flow.png" alt="Diagram comparing a password-only sign-in flow to a sign-in flow with two-factor authentication enabled" width="1360" height="672" loading="lazy">
+          </div>
+          <figcaption>A password-only sign-in vs. a sign-in with 2FA enabled.</figcaption>
+        </figure>
+
+        <p>
+          Here's what to expect. A regular sign-in session will ask you for
+          a username or email and a password. If it matches, you're signed
+          in. Yay!
+        </p>
+        <p>
+          With 2FA enabled, the basic sign-in credentials are not enough.
+          Once your initial sign-in succeeds, you will be greeted with a
+          second sign-in. Depending on the method of authentication, it can
+          take anywhere from a few seconds to a minute.
+        </p>
+        <p>
+          2FA exists in many forms; it can be as simple as a code sent to a
+          cell phone via text, a backup code sent via email, or a code sent
+          by a third-party authenticator app like Proton Authenticator (my
+          personal favorite). The cool thing is the user can select which
+          form of authentication suits them best. I enjoy using a dedicated
+          authenticator app due to its speed, ease of use, organization, and
+          ability to store codes for multiple different accounts.
+        </p>
+
+        <figure class="body-figure">
+          <div class="frame">
+            <img src="../assets/how-to-set-up-2fa/google-2fa-method-selection.png" alt="Google account settings screen showing the available two-factor authentication methods to choose from" width="648" height="632" loading="lazy">
+          </div>
+          <figcaption>Choosing a 2FA method on a Google account.</figcaption>
+        </figure>
+
+        <ol>
+          <li>Sign into your online account (Google, GitHub, Squarespace, Instagram).</li>
+          <li>Navigate to your account settings and search for "Security &amp; Sign-In" or "Password and Authentication" — look for something along these lines. There's no universal term for this, and it can vary by provider.</li>
+          <li>Navigate to the Two-Factor Authentication menu or tab from the security or password menu.</li>
+          <li>Turn ON Two-Factor Authentication or 2FA.</li>
+          <li>Add your additional sign-on method: e.g., SMS/text message, authenticator app of choice, security keys, or recovery email. Different accounts have different options to choose from.</li>
+          <li>You will be given backup codes in case you lose your authentication device. Download these and store them somewhere other than on the authentication device. Losing your phone and getting locked out is the single most common real-world headache with 2FA.</li>
+          <li>Make sure the changes worked — sign out of your online account and try signing in again. You should be redirected to the 2FA method you selected. Enter the confirmation and finish the sign-in process. This will happen every time you sign in now, so get used to it.</li>
+        </ol>
+
+        <h2>Downsides?</h2>
+        <p>
+          The only real downside is a few extra seconds at sign-in.
+        </p>
+
+        <p class="detail-meta">— JLK</p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap">
+      <span class="footer-copy">© 2026</span>
+      <nav class="footer-links">
+        <a class="contact" href="mailto:inquiries.agave@proton.me">inquiries.agave@proton.me</a>
+        <a href="https://github.com/jleok" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/johnleok" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
