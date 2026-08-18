@@ -18,6 +18,11 @@ A reference for running this site day to day, written for someone new to git.
 - `design/` is the design-phase reference (mockups, palette, layout specs)
   used to build the live pages — it's not part of the live site itself, just
   documentation for making future changes match the existing look.
+- `blog-drafts/` is where in-progress blog posts live before they're ready to
+  publish. It's listed in `.gitignore`, so it stays local-only and never gets
+  pushed to GitHub — anything in `main` is live within a minute, and a draft
+  isn't ready for that. When a post is finished, move/copy it into
+  `blog/posts/` as a real page and link it from `blog/index.html`.
 
 ## The core workflow (every time you change something)
 
