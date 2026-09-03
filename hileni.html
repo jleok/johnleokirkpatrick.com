@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; media-src 'self'; style-src 'self'; script-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<title>Hileni</title>
+<link rel="stylesheet" href="css/hileni.css" />
+</head>
+<body>
+
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <main class="stage">
+    <p class="eyebrow">For Hileni</p>
+
+    <div class="frame">
+      <img src="assets/hileni.jpg" alt="A photo of Hileni" width="1281" height="1600">
+    </div>
+
+    <p class="message">I am sorry Hileni <span class="heart">&lt;3</span></p>
+    <p class="subtext">I know that doesn't fix everything, but I mean it — and I'd like the chance to show you.</p>
+    <p class="signature">— John</p>
+
+    <button id="play-btn" type="button" aria-pressed="false">
+      <span class="play-icon" aria-hidden="true"></span>
+      <span class="play-label">Play our song</span>
+    </button>
+    <audio id="track" src="assets/our-song.mp3" preload="none"></audio>
+  </main>
+
+  <script src="js/hileni.js"></script>
+</body>
+</html>

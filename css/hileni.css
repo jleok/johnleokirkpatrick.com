@@ -1,0 +1,201 @@
+/* ============================================================
+   Hileni — private page
+   ============================================================ */
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/fraunces-variable.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fonts/fraunces-variable.woff2") format("woff2");
+}
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ibm-plex-sans-variable.woff2") format("woff2");
+}
+
+:root{
+  --bg-0: #0b0f14;
+  --bg-1: #10151d;
+  --rose: #e8a5a0;
+  --rose-soft: #f2c9c4;
+  --gold: #d9b26a;
+  --text: #f4efe9;
+  --text-dim: #b9b3ac;
+}
+
+*{ box-sizing: border-box; }
+html, body{ margin:0; padding:0; }
+
+body{
+  min-height: 100svh;
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(232,165,160,0.10), transparent 60%),
+    radial-gradient(80% 60% at 50% 100%, rgba(217,178,106,0.08), transparent 60%),
+    linear-gradient(180deg, var(--bg-0), var(--bg-1));
+  color: var(--text);
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  overflow-x: hidden;
+}
+
+.stage{
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.eyebrow{
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0;
+  animation: rise 0.9s ease forwards;
+}
+
+.frame{
+  position: relative;
+  width: min(78vw, 340px);
+  border-radius: 18px;
+  padding: 8px;
+  background: linear-gradient(160deg, rgba(232,165,160,0.35), rgba(217,178,106,0.25));
+  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+  opacity: 0;
+  animation: rise 1s ease 0.15s forwards;
+}
+
+.frame img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  filter: saturate(1.03);
+}
+
+.message{
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  line-height: 1.25;
+  color: var(--rose-soft);
+  text-shadow: 0 2px 30px rgba(232,165,160,0.25);
+  opacity: 0;
+  animation: rise 1s ease 0.35s forwards;
+}
+
+.message .heart{
+  color: var(--rose);
+  font-style: normal;
+}
+
+.subtext{
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  max-width: 34ch;
+  line-height: 1.6;
+  opacity: 0;
+  animation: rise 1s ease 0.55s forwards;
+}
+
+.signature{
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1rem;
+  color: var(--gold);
+  opacity: 0;
+  animation: rise 1s ease 0.75s forwards;
+}
+
+@keyframes rise{
+  from{ opacity: 0; transform: translateY(14px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+#fx{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100svh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stage{ position: relative; z-index: 1; }
+
+.frame{
+  --pulse: 0;
+  box-shadow:
+    0 30px 60px -20px rgba(0,0,0,0.6),
+    0 0 calc(20px + var(--pulse) * 60px) calc(var(--pulse) * 14px) rgba(232,165,160,calc(0.15 + var(--pulse) * 0.35));
+  transition: box-shadow 80ms linear;
+}
+
+#play-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(217,178,106,0.4);
+  background: rgba(244,239,233,0.04);
+  color: var(--gold);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  padding: 10px 20px 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  opacity: 0;
+  animation: rise 1s ease 0.95s forwards;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+#play-btn:hover{
+  background: rgba(217,178,106,0.1);
+  border-color: rgba(217,178,106,0.7);
+  transform: translateY(-1px);
+}
+
+#play-btn:active{ transform: translateY(0); }
+
+.play-icon{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 0 6px 10px;
+  border-color: transparent transparent transparent var(--gold);
+  transition: border-width 0.15s ease;
+}
+
+#play-btn[aria-pressed="true"] .play-icon{
+  width: 10px;
+  height: 12px;
+  border-style: double;
+  border-width: 0 0 0 10px;
+  border-color: transparent transparent transparent var(--gold);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .eyebrow, .frame, .message, .subtext, .signature, #play-btn{
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
