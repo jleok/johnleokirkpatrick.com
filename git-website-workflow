@@ -1,0 +1,43 @@
+┌─────────────┬────────────────────────────────┬────────────────────────┐
+  │    Step     │          What it does          │    Where it happens    │
+  ├─────────────┼────────────────────────────────┼────────────────────────┤
+  │ Edit files  │ You change the actual content  │ Your computer only     │
+  ├─────────────┼────────────────────────────────┼────────────────────────┤
+  │ git status  │ Just shows you what changed —  │ Your computer only     │
+  │             │ no action taken                │                        │
+  ├─────────────┼────────────────────────────────┼────────────────────────┤
+  │             │ Marks specific changed files   │                        │
+  │ git add     │ as "include this in my next    │ Your computer only     │
+  │             │ save"                          │                        │
+  ├─────────────┼────────────────────────────────┼────────────────────────┤
+  │ git commit  │ Actually saves that snapshot,  │ Your computer only     │
+  │             │ permanently, with a message    │                        │
+  ├─────────────┼────────────────────────────────┼────────────────────────┤
+  │             │ Uploads your saved snapshot(s) │ This is the only step  │
+  │ git push    │  to GitHub                     │ that leaves your       │
+  │             │                                │ computer               │
+  ├─────────────┼────────────────────────────────┼────────────────────────┤
+  │ (automatic) │ GitHub Pages notices main      │ GitHub's side, no      │
+  │             │ changed and republishes        │ command from you       │
+  └─────────────┴────────────────────────────────┴────────────────────────┘
+
+
+
+ jleo@khjon:~$ git status                                                    
+  fatal: not a git repository (or any parent up to mount point /home)         
+  Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).  
+                                                                              
+
+● That's just because you're not inside the project folder — git only knows
+  about the repo when you're in (or under) /home/jleo/my-website. Your home
+  directory itself (~) isn't a git repo.
+ 
+  Fix:
+  cd ~/my-website
+  git status
+  
+  As long as your terminal prompt shows you're inside my-website (or any
+  folder under it), git commands will work. If you cd back out to ~ or
+  anywhere else, you'll get that same "not a git repository" error again —
+  that's git correctly telling you "there's nothing to track here."
+
