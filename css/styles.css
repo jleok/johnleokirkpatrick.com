@@ -220,25 +220,6 @@ header.site .wrap{
   max-width: 56ch;
 }
 
-/* portrait — real photo, kept in color (see theme.md: the warm wood tones
-   already sit close to the palette, so grayscale was rejected). */
-.intro-photo-block{
-  flex: 0 0 auto;
-  width: 220px;
-}
-.intro-photo{
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  overflow: hidden;
-  background: var(--surface);
-}
-.intro-photo img{
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 /* ---------------- work index ---------------- */
 .work,
 .catalogue{
@@ -261,7 +242,6 @@ header.site .wrap{
 @media (max-width: 1023px){
   .grid{ grid-template-columns: 1fr; }
   .intro-inner{ flex-direction: column; align-items: flex-start; gap: var(--space-6); }
-  .intro-photo-block{ width: 160px; }
 }
 
 .card{
